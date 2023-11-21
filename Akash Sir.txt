@@ -1,0 +1,60 @@
+package problem_solving;
+
+import java.util.Scanner;
+
+public class Election {
+
+    public static void main(String[] args) {
+        election();
+    }
+
+    static void election() {
+       
+        int n, v, a = 0, b = 0, c = 0;
+        System.out.println("\n\n\t\t\tCR election\n\n\n\n");
+
+        System.out.println("Enter your favourite candidate's number when you call for your vote");
+        System.out.println("Candidates: \n 1) Rohim \n 2) Korim \n 3) Hasan \n");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students in this class:");
+        n = scanner.nextInt();
+
+        for (int i = 1; i < n + 1; i++) {
+            System.out.printf("Roll number %d Please give your vote:\n", i);
+            v = scanner.nextInt();
+
+            if (v == 1) {
+                a++;
+            } else if (v == 2) {
+                b++;
+            } else {
+                c++;
+            }
+        }
+
+        clearScreen();
+
+        System.out.printf("Rohim gets %d votes \n", a);
+        System.out.printf("Korim gets %d votes \n", b);
+        System.out.printf("Hasan gets %d votes \n", c);
+
+        if (a >= b && a >= c)
+            System.out.println("Rohim is the elected CR \n");
+
+        if (b >= a && b >= c)
+            System.out.println("Korim is the elected CR \n");
+
+        if (c >= a && c >= b)
+            System.out.println("Hasan is the elected CR \n");
+
+        System.out.println("Completed. \n Now press any key to continue");
+        scanner.nextLine(); 
+        scanner.nextLine(); 
+    }
+
+    private static void clearScreen() {
+       
+    }
+}
